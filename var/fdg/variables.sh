@@ -60,7 +60,7 @@ Flags(s) : ($AFD) \n
 "
 WANTSELINUX="
 ================================================================================\n
-\n
+Do you want to enable SELinux(Required for Android 4.4 or later)\n
 Flags(s) : () \n
 Other Names : \n
 --------------------------------------------------------------------------------\n
