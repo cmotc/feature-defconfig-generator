@@ -1,2 +1,4 @@
 #! /bin/sh
-merge_config.sh -m $1
+pwd
+echo $*
+./lib/merge_config.sh "-m" $*
