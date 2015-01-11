@@ -1,6 +1,7 @@
 #! /bin/bash
 source var/fdg/supported.sh
-source var/android/configs/android-base.cfg
+ABD=$(<var/android/configs/android-base.cfg)
+AFD=$(<var/android/configs/android-recommended.cfg)
 INTRO="\n
 =================================================================================\n
 Generate Defconfig by feature\n
@@ -34,14 +35,27 @@ WANTMSM7X30="
 ================================================================================\n
 Is your target the Snapdragon S2?\n
 Flags(s) : (CONFIG_ARCH_MSM7X30) \n
-Other Names : \n
+Other Names : (MSM7230, MSM7630, APQ8055, MSM8255, MSM8255T, MSM8655, MSM8655T)\n
 --------------------------------------------------------------------------------\n
 "
 WANTANDROID="
 ================================================================================\n
 Do you want Android features enabled?\n
-Flags(s) : () \n
+Flags(s) : (follow-up) \n
+You will be prompted to choose between the base or full Android defconfig
+--------------------------------------------------------------------------------\n
+"
+WANTANDROIDBASE="
+================================================================================\n
+Do you just want the base android features?\n
+Flags(s) : ($ABD) \n
 Other Names : \n
+--------------------------------------------------------------------------------\n
+"
+WANTANDROIDFULL="
+================================================================================\n
+Do you want the full Android features?\n
+Flags(s) : ($AFD) \n
 --------------------------------------------------------------------------------\n
 "
 WANTSELINUX="
@@ -55,12 +69,15 @@ DPDARM="var/arch/arm/configs/"
 DPDFEAT="var/feat/"
 DPDSUBARCH="var/sub-arch/"
 DPDANDROID="var/android/configs/"
-
-
-PDSELINUX=""
-PDDMCRYPT=""
-PDANDROID=""
 echo -e $INTRO
 echo -e $WANTMSM
 echo -e $WANTMSM7XXXA
 echo -e $WANTMSM7X30A
+echo -e $WANTANDROID
+echo -e $WANTANDROIDBASE
+PDANDROID=""
+echo -e $WANTANDROIDFULL
+PDANDROID=""
+echo -e $WANTSELINUX
+PDSELINUX=""
+PDDMCRYPT=""
