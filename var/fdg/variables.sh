@@ -1,5 +1,6 @@
 #! /bin/bash
 source var/fdg/supported.sh
+source var/android/configs/android-base.cfg
 INTRO="\n
 =================================================================================\n
 Generate Defconfig by feature\n
@@ -31,14 +32,14 @@ Other Names : (MSM7225, MSM7625, MSM7227, MSM7627, MSM7225A, MSM7625A, MSM72271,
 "
 WANTMSM7X30="
 ================================================================================\n
-\n
+Is your target the Snapdragon S2?\n
 Flags(s) : (CONFIG_ARCH_MSM7X30) \n
 Other Names : \n
 --------------------------------------------------------------------------------\n
 "
 WANTANDROID="
 ================================================================================\n
-\n
+Do you want Android features enabled?\n
 Flags(s) : () \n
 Other Names : \n
 --------------------------------------------------------------------------------\n
