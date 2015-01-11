@@ -171,3 +171,4 @@ if [ [$PDSEL="y"] ]; then
 fi
 echo $MERGEFILES
 ./lib/merge_config_nomake.sh $MERGEFILES
+mv .config generated_config
