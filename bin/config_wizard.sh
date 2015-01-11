@@ -75,7 +75,7 @@ while true; do
 		*) echo "Please answer Y/y or N/n";;
 	esac
 done
-	if [ [$PDWF="y" ] ]; then
+	if [ [$PDWF="y"] ]; then
 		while true; do
 			read -p "$WANTATH6KL" yn
 			case $yn in
@@ -130,3 +130,44 @@ while true; do
 		*) echo "Please answer Y/y or N/n";;
 	esac
 done
+if [ [$PDMSM="y"] ]; then
+	MERGEFILES=$MSM_DEFCON
+fi
+if [ [$PDS="y"] ]; then
+	MERGEFILES=$MERGEFILES$MSMS_DEFCON
+fi
+if [ [$PDSS="y"] ]; then
+	MERGEFILES=$MERGEFILES$MSMSS_DEFCON
+fi
+if [ [$PDRENO="y"] ]; then
+	MERGEFILES=$MERGEFILES$MSM_FB_DEFCON
+fi
+if [ [$PDAB="y"] ]; then
+	MERGEFILES=$MERGEFILES$AND_DEFCON
+fi
+if [ [$PDAF="y"] ]; then
+	MERGEFILES=$MERGEFILES$ANF_DEFCON
+fi
+if [ [$PDWF="y"] ]; then
+	MERGEFILES=$MERGEFILES$WIFI_DEFCON
+fi
+if [ [$PDATHM="y"] ]; then
+	MERGEFILES=$MERGEFILES$ATHM_DEFCON
+fi
+if [ [$PDATHMU="y"] ]; then
+	MERGEFILES=$MERGEFILES$ATHMU_DEFCON
+fi
+if [ [$PDATHMD="y"] ]; then
+	MERGEFILES=$MERGEFILES$ATHMD_DEFCON
+fi
+if [ [$PDATH="y"] ]; then
+	MERGEFILES=$MERGEFILES$ATH_DEFCON
+fi
+if [ [$PDATHD="y"] ]; then
+	MERGEFILES=$MERGEFILES$ATHD_DEFCON
+fi
+if [ [$PDSEL="y"] ]; then
+	MERGEFILES=$MERGEFILES$SEL_DEFCON
+fi
+echo $MERGEFILES
+./lib/merge_config_nomake.sh $MERGEFILES
